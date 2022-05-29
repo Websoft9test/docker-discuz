@@ -19,15 +19,8 @@ RUN apt-get update && apt-get upgrade -y && apt install unzip zip -y; \
 COPY ./src/Discuz_X* $INSTALL_DIR
 COPY entrypoint.sh /entrypoint.sh
 
-
-
-RUN unzip Discuz_* -d discuzcode; \
-    cp -r discuzcode/upload/* $INSTALL_DIR; \
+RUN unzip Discuz_* -d /var/www/html/unzip; \
+    cp -r unzip/upload/* $INSTALL_DIR; \
     chmod -R 777 $INSTALL_DIR; \
+    rm -rf Discuz_* unzip
     chmod +x /entrypoint.sh
-
-RUN rm -rf discuzcode Discuz_X*
-
-VOLUME ["$INSTALL_DIR"]
-
-WORKDIR $INSTALL_DIR
