@@ -10,7 +10,7 @@ ENV DISCUZ_DB_PASSWORD=discuz
 ENV DISCUZ_DB_DATABASE=discuz
 
 
-ENV INSTALL_DIR /var/www/html
+ARG INSTALL_DIR /var/www/html
 
 RUN apt-get update && apt-get upgrade -y && apt install unzip zip -y; \
     rm -rf /var/lib/apt/lists/* ; \
