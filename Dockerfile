@@ -9,18 +9,17 @@ ENV DISCUZ_DB_USER=discuz
 ENV DISCUZ_DB_PASSWORD=discuz
 ENV DISCUZ_DB_DATABASE=discuz
 
-
-ARG INSTALL_DIR /var/www/html
-
 RUN apt-get update && apt-get upgrade -y && apt install unzip zip -y; \
-    rm -rf /var/lib/apt/lists/* ; \
-    rm -rf /var/www/html/*
+    rm -rf /var/lib/apt/lists/* ; 
 
-COPY ./src/Discuz_X* $INSTALL_DIR
+COPY  ./src/Discuz_X* /tmp
+
 COPY entrypoint.sh /entrypoint.sh
 
-RUN unzip Discuz_* -d /var/www/html/unzip; \
-    cp -r unzip/upload/* $INSTALL_DIR; \
-    chmod -R 777 $INSTALL_DIR; \
-    rm -rf Discuz_* unzip
-    chmod +x /entrypoint.sh
+
+RUN set -ex; \
+    cd /tmp && mkdir /usr/src/discuz; \
+    unzip Discuz_* -d /usr/src/discuz; \
+    chown -R www-data:www-data /usr/src/discuz
+
+RUN  chmod +x /entrypoint.sh
