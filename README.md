@@ -10,14 +10,14 @@ This repository is an **Cloud Native solution** powered by [Websoft9](https://ww
 
 ## System Requirements
 
-The following are the minimal [recommended requirements](https://github.com/onlyoffice/docker#recommended-system-requirements):
+The following are the minimal [recommended requirements](https://github.com/joomla-docker/docker-joomla):
 
 * **OS**: Red Hat, CentOS, Debian, Ubuntu or other's Linux OS
 * **Public Cloud**: More than 20+ major Cloud such as AWS, Azure, Google Cloud, Alibaba Cloud, HUAWEIClOUD, Tencent Cloud
 * **Private Cloud**: KVM, VMware, VirtualBox, OpenStack
 * **ARCH**:  Linux x86-64, ARM 32/64, x86/i686
-* **RAM**: 4 GB or more
-* **CPU**: 2 cores or higher
+* **RAM**: 1 GB or more
+* **CPU**: 1 cores or higher
 * **HDD**: at least 20 GB of free space
 * **Swap file**: at least 2 GB
 * **bandwidth**: more fluent experience over 100M  
