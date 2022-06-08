@@ -1,4 +1,5 @@
 #!/bin/bash
+# This shell scritp is based on https://github.com/joomla-docker/docker-joomla/blob/master/4.1/php7.4/apache/docker-entrypoint.sh
 
 set -e
 
