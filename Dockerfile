@@ -23,5 +23,3 @@ RUN set -ex; \
     chown -R www-data:www-data /usr/src/discuz
 
 RUN  chmod +x /entrypoint.sh
-
-ENTRYPOINT ["/entrypoint.sh"]
