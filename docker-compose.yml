@@ -14,6 +14,10 @@ services:
       - DISCUZ_DB_USER=$DB_MYSQL_USER
       - DISCUZ_DB_DATABASE=$DB_MYSQL_NAME
       - DISCUZ_DB_PASSWORD=$DB_MYSQL_PASSWORD
+    entrypoint:
+      - bash
+      - -c
+      - /entrypoint.sh apache2-foreground
     volumes:
       - 'discuz:/var/www/html'
     depends_on:
