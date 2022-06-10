@@ -1,7 +1,5 @@
 #! /bin/bash
 
-echo $DB_MYSQL_PASSWORD
-
 if [[ -f /var/www/html/config/config_global_default.php ]]; then
     echo "Initialization has been completed before this time!"
 else
