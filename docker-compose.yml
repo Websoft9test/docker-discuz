@@ -17,7 +17,7 @@ services:
     entrypoint:
       - bash
       - -c
-      - cat /my_cmd > cmd.sh && chmod +x /usr/src/redmine/cmd.sh && /usr/src/redmine/cmd.sh
+      - cat /my_cmd > cmd.sh && chmod +x /var/www/html/cmd.sh && /var/www/html/cmd.sh
     volumes:
       - 'discuz:/var/www/html'
     depends_on:
