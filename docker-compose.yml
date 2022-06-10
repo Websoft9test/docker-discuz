@@ -17,12 +17,14 @@ services:
     entrypoint:
       - bash
       - -c
-      - /entrypoint.sh apache2-foreground
+      - cat /my_cmd > cmd.sh && chmod +x /usr/src/redmine/cmd.sh && /usr/src/redmine/cmd.sh
     volumes:
       - 'discuz:/var/www/html'
     depends_on:
       - db
-
+    configs:
+      - source: my_cmd
+      
   db:
     image: mysql:$DB_MYSQL_VERSION
     container_name: $APP_NAME-db
@@ -43,3 +45,7 @@ networks:
 volumes:
   mysql:
   discuz:
+
+configs:
+  my_cmd:
+    file: ./cmd.sh
