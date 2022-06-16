@@ -20,7 +20,7 @@ services:
       - -c
       - cat /my_cmd > cmd.sh && chmod +x /var/www/html/cmd.sh && /var/www/html/cmd.sh
     volumes:
-      - 'discuz:/var/www/html'
+      - discuz:/var/www/html
     depends_on:
       - db
     configs:
